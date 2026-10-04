@@ -1,0 +1,19 @@
+import MovieList from "./MovieList";
+import { useSelector } from "react-redux";
+
+const MovieContainer = () => {
+  const movie = useSelector((store) => store.movie);
+
+  return (
+    <div className="bg-black">
+      <div className="-mt-48 relative z-10">
+        <MovieList title={"Now Playing Movies"} movies={movie.nowPlayingMovies} />
+        <MovieList title={"Popular Movies"} movies={movie.popularMovies} />
+        <MovieList title={"Top Rated Movies"} movies={movie.topRatedMovies} />
+        <MovieList title={"Upcoming Movies"} movies={movie.upcomingMovies} />
+      </div>
+    </div>
+  );
+};
+
+export default MovieContainer;
